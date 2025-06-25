@@ -38,4 +38,4 @@ average_encrypted = total_encrypted * (1 / patient_count)
 
 # STEP 6: Research team decrypts final insight
 average_result = average_encrypted.decrypt()
-print("🔐 Securely computed average cholesterol level:", round(average_result[0], 2), "mg/dL")
+print("🔐 Securely computed average cholesterol level:", round(average_result[0], 2), "mg/dL") # RESULT is 199.54 mg/dL
