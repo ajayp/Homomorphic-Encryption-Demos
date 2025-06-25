@@ -22,4 +22,4 @@ total_encrypted = reduce(lambda a, b: a + b, encrypted_votes)
 
 # Step 4: Decrypt only the final result
 final_tally = total_encrypted.decrypt()
-print("🧮 Decrypted tally (votes for Alice):", round(final_tally[0])) # RESULT is 3
+print("🧮 Decrypted tally (votes for Alice):", round(final_tally[0])) # RESULT is 3 votes
