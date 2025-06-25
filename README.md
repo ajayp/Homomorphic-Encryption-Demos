@@ -1,4 +1,4 @@
-# Homomorphic Encryption Demos
+# Homomorphic Encryption
 
 Homomorphic encryption is a form of encryption that allows computations to be performed directly on encrypted data, so results remain accurate and meaningful after decryption, without ever exposing the underlying sensitive information.   
 
