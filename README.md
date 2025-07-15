@@ -1,32 +1,54 @@
-# Homomorphic Encryption Demos
+# 🔐 Homomorphic Encryption Demos
 
 ## 💡 Why Homomorphic Encryption?
 
-Homomorphic Encryption refers to a new type of encryption technology that allows computation to be directly on encrypted data, without requiring any decryption in the process.
+Homomorphic Encryption (HE) refers to a new type of cutting-edge encryption technology that allows computations to be performed directly on encrypted data—without ever exposing the raw inputs. This breakthrough enables secure workflows in areas like:
 
-Homomorphic encryption enables computation on encrypted data, unlocking new possibilities for privacy-preserving ML, identity verification, secure medical workflows, and federated finance — without revealing raw inputs.
+- Privacy-preserving machine learning  
+- Federated finance and encrypted identity checks  
+- Secure healthcare and biometric verification  
 
-This repository contains several homomorphic encryption demos built using:
-- [TenSEAL](https://github.com/OpenMined/TenSEAL) — for CKKS-based encrypted vector math
-- [SEAL-Python](https://github.com/Huelse/SEAL-Python) — a Python wrapper around Microsoft SEAL, supporting BFV and CKKS schemes
+This repository showcases practical HE demos using two popular encryption schemes, **BFV** and **CKKS**, each tailored to specific use cases.
 
----
-## 🔐 Projects
+Built with:
+- [TenSEAL](https://github.com/OpenMined/TenSEAL) — CKKS-based encrypted vector math library
+- [SEAL-Python](https://github.com/Huelse/SEAL-Python) — Python wrapper for Microsoft SEAL, supporting both BFV and CKKS
+
+## 🤔 Why BFV and CKKS?
+
+This repository uses both **BFV** and **CKKS** encryption schemes because each is optimized for different types of computation:
+
+| Scheme | Precision Type | Best Use | Example Demo |
+|--------|----------------|-----------|---------------|
+| **BFV** | Exact integers | Binary decisions, like age checks | `seal_demos/` |
+| **CKKS** | Approximate floats | Encrypted ML inference and analytics | `tenseal_demos/` |
+
+- 🧮 **BFV** is essential when precision matters—such as verifying whether a value meets a specific threshold.  
+- 📊 **CKKS** is perfect for privacy-preserving machine learning and statistical workloads, where small rounding errors are acceptable.
+
+📌 _Note: While TenSEAL includes BFV support, its main strength and tooling focus is on CKKS. For more robust integer logic, we rely on SEAL-Python._
+
+This split ensures each demo showcases the encryption scheme in the context it performs best—without compromise.
+
+## 🗂️ Project Structure
 
 ### `tenseal_demos/`
-Demonstrates encrypted inference using CKKS. Floating-point operations and privacy-preserving ML workloads.
+- Demonstrates encrypted ML inference and floating-point operations using CKKS.
+- Ideal for showcasing privacy-preserving analytics.
 
 ### `seal_demos/`
-A discrete integer demo using BFV — built with SEAL-Python. It shows how a service can check if a user's age meets a threshold without ever seeing the actual age.
-
-📌 _Note: This project intentionally uses BFV because TenSEAL does not support BFV-based integer logic for threshold comparisons._
+- Implements discrete logic using BFV.
+- Demonstrates secure age checks without revealing user data.
 
 ---
 
 ## 🧪 How to Run
 
-Each project is self-contained and has its own dependencies. Please follow the setup instructions in the `README.md` inside each sub-folder (`tenseal_demos/` and `seal_demos/`).
+Each project is self-contained with its own dependencies. To get started:
 
-This separation ensures that the dependencies for one demo do not conflict with the other.
+1. Navigate to the appropriate folder (`tenseal_demos/` or `seal_demos/`)
+2. Follow setup instructions in the respective `README.md`
+
+This modular setup ensures that library dependencies remain isolated and don’t conflict across projects.
 
 ---

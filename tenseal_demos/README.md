@@ -11,8 +11,8 @@ For example, in healthcare, sensitive patient information can be encrypted and s
 
 Result: Actionable insights are gained while keeping personal health information completely private.  
 
-- [`healthcare.py`](healthcare.py) demonstrates secure aggregation of patient cholesterol levels from multiple clinics, computing the average without exposing any patient's actual value.
-- [`votes.py`](votes.py) shows how to tally encrypted votes, so the final count is revealed but individual votes remain private.
+- [`healthcare.py`](ckks_healthcare.py) demonstrates secure aggregation of patient cholesterol levels from multiple clinics, computing the average without exposing any patient's actual value.
+- [`votes.py`](ckks_votes.py) shows how to tally encrypted votes, so the final count is revealed but individual votes remain private.
 
 ## Installation
 

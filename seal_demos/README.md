@@ -27,14 +27,6 @@ Imagine a service that needs to verify whether a user is over 18 without ever se
 
 ---
 
-## 🤔 Why BFV and not CKKS?
-
-The BFV scheme supports exact arithmetic on integers, which is crucial for binary decisions like age checks.
-
-By contrast, CKKS handles approximate floating-point math — great for encrypted statistics or ML inference, but unsuitable for precise integer thresholding due to potential rounding errors.
-
----
-
 ## 🚀 Getting Started
 
 ### Prerequisites
