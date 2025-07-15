@@ -1,40 +1,54 @@
-# Homomorphic Encryption
+# 🔐 Homomorphic Encryption Demos
 
-Homomorphic encryption is a form of encryption that allows computations to be performed directly on encrypted data, so results remain accurate and meaningful after decryption, without ever exposing the underlying sensitive information.   
+## 💡 Why Homomorphic Encryption?
 
-For example, in healthcare, sensitive patient information can be encrypted and shared with researchers without ever seeing any individual's private data. This enables statistical analysis, or even machine learning algorithms to be performed directly on the encrypted data.
+Homomorphic Encryption (HE) refers to a new type of cutting-edge encryption technology that allows computations to be performed directly on encrypted data—without ever exposing the raw inputs. This breakthrough enables secure workflows in areas like:
 
-### 🔐 How it works:
-- **Encrypt patient data**: Lab results or diagnoses are encrypted before sharing
-- **Compute securely**: Operations like averages, totals, or even machine learning models are run *without* decrypting the data
-- **Decrypt the outcome**: Only the final results are decrypted—never the individual records
+- Privacy-preserving machine learning  
+- Federated finance and encrypted identity checks  
+- Secure healthcare and biometric verification  
 
-Result: Actionable insights are gained while keeping personal health information completely private.  
+This repository showcases practical HE demos using two popular encryption schemes, **BFV** and **CKKS**, each tailored to specific use cases.
 
-- [`healthcare.py`](healthcare.py) demonstrates secure aggregation of patient cholesterol levels from multiple clinics, computing the average without exposing any patient's actual value.
-- [`votes.py`](votes.py) shows how to tally encrypted votes, so the final count is revealed but individual votes remain private.
+Built with:
+- [TenSEAL](https://github.com/OpenMined/TenSEAL) — CKKS-based encrypted vector math library
+- [SEAL-Python](https://github.com/Huelse/SEAL-Python) — Python wrapper for Microsoft SEAL, supporting both BFV and CKKS
 
-## Installation
+## 🤔 Why BFV and CKKS?
 
-1. **Clone the repository:**
-    ```bash
-    git clone <repository_url>
-    cd <repository_name>
-    ```
+This repository uses both **BFV** and **CKKS** encryption schemes because each is optimized for different types of computation:
 
- 2. **Create a Python virtual environment (recommended):**
-    ```bash
-    python3 -m venv venv
-    source venv/bin/activate  # On Windows: .\venv\Scripts\activate
-    ```
+| Scheme | Precision Type | Best Use | Example Demo |
+|--------|----------------|-----------|---------------|
+| **BFV** | Exact integers | Binary decisions, like age checks | `seal_demos/` |
+| **CKKS** | Approximate floats | Encrypted ML inference and analytics | `tenseal_demos/` |
 
-3. Install dependencies:
-   ```sh
-   pip install -r requirements.txt
-   ```
-   
-4. Run the demos:
-   ```sh
-   python healthcare.py
-   python votes.py
-   ```
+- 🧮 **BFV** is essential when precision matters—such as verifying whether a value meets a specific threshold.  
+- 📊 **CKKS** is perfect for privacy-preserving machine learning and statistical workloads, where small rounding errors are acceptable.
+
+📌 _Note: While TenSEAL includes BFV support, its main strength and tooling focus is on CKKS. For more robust integer logic, we rely on SEAL-Python._
+
+This split ensures each demo showcases the encryption scheme in the context it performs best—without compromise.
+
+## 🗂️ Project Structure
+
+### `tenseal_demos/`
+- Demonstrates encrypted ML inference and floating-point operations using CKKS.
+- Ideal for showcasing privacy-preserving analytics.
+
+### `seal_demos/`
+- Implements discrete logic using BFV.
+- Demonstrates secure age checks without revealing user data.
+
+---
+
+## 🧪 How to Run
+
+Each project is self-contained with its own dependencies. To get started:
+
+1. Navigate to the appropriate folder (`tenseal_demos/` or `seal_demos/`)
+2. Follow setup instructions in the respective `README.md`
+
+This modular setup ensures that library dependencies remain isolated and don’t conflict across projects.
+
+---
