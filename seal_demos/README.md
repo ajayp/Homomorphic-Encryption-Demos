@@ -134,9 +134,4 @@ SEAL-Python wraps Microsoft SEAL’s C++ library with a Pythonic interface. Key 
 - Use `create_public_key()` for key access
 - Decrypted plaintexts must be interpreted as signed integers modulo `plain_modulus`
 
-```python
-value = int(decrypted.to_string(), 16)
-if value > plain_modulus // 2:
-    value -= plain_modulus
-```
 
