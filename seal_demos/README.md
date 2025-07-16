@@ -91,8 +91,10 @@ brew install cmake       # or use your OS package manager
 
    This creates a file named `seal.<platform>.so` (or `.pyd` on Windows) in your current folder.
 
-9. **Move the `seal.*.so` file generated in step 8 up to the parent `seal_demos` folder** so it can be imported by the demo script.
-
+9. **Copy the `seal.*.so` file generated in step 8 up to the parent `seal_demos` folder** so it can be imported by the demo script.
+   ```bash
+   cp seal.*.so ../
+  
 ---
 
 ## Running the Demo

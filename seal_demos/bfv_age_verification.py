@@ -1,4 +1,4 @@
-from seal import *
+from seal import Encryptor, Decryptor, Evaluator, KeyGenerator, SEALContext, EncryptionParameters, scheme_type, CoeffModulus, PlainModulus, Plaintext
 import argparse
 
 # --- Configuration and Key Generation (Trusted Setup) ---
@@ -44,6 +44,7 @@ def decode_signed(decrypted, plain_modulus):
 # --- Service's Actions ---
 def service_verifies_age(context, encrypted_age, required_age):
     evaluator = Evaluator(context)
+
     plain_required = Plaintext(str(required_age))
     encrypted_diff = evaluator.sub_plain(encrypted_age, plain_required)
     return encrypted_diff
