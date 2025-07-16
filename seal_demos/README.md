@@ -27,6 +27,22 @@ Imagine a service that needs to verify whether a user is over 18 without ever se
 
 ---
 
+## 🧾 Expected Output
+
+```text
+User's age: 25. Threshold: 18.
+Server computes (age - 18) homomorphically...
+Decrypted result: 7
+✅ Age verification successful: True
+
+User's age: 17. Threshold: 18.
+Server computes (age - 18) homomorphically...
+Decrypted result: -1
+✅ Age verification successful: False
+```
+
+---
+
 ## 🚀 Getting Started
 
 ### Prerequisites
@@ -107,21 +123,6 @@ brew install cmake       # or use your OS package manager
 
 ---
 
-## 🧾 Expected Output
-
-```text
-User's age: 25. Threshold: 18.
-Server computes (age - 18) homomorphically...
-Decrypted result: 7
-✅ Age verification successful: True
-
-User's age: 17. Threshold: 18.
-Server computes (age - 18) homomorphically...
-Decrypted result: -1
-✅ Age verification successful: False
-```
-
----
 
 ## 🧩 Notes on SEAL-Python Compatibility
 
